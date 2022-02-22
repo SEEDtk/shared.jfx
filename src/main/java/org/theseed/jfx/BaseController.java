@@ -4,6 +4,7 @@
 package org.theseed.jfx;
 
 import java.io.IOException;
+import java.net.URL;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -129,7 +130,8 @@ public abstract class BaseController implements IController {
      * @throws IOException
      */
     public static IController loadFXML(Class<?> cls, String fxml, Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(cls.getResource(fxml + ".fxml"));
+        URL location = cls.getResource(fxml + ".fxml");
+        FXMLLoader fxmlLoader = new FXMLLoader(location);
         Parent parent = fxmlLoader.load();
         IController retVal = (IController) fxmlLoader.getController();
         stage.setTitle(retVal.getWindowTitle());
