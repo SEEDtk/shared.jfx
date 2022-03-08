@@ -175,7 +175,7 @@ public abstract class BaseController implements IController {
         messageBox.setHeaderText(header);
         messageBox.setContentText(message);
         messageBox.showAndWait();
-        return (messageBox.getResult() == ButtonType.YES);
+        return (messageBox.getResult() == ButtonType.OK);
     }
 
 }
