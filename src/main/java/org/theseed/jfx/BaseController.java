@@ -13,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -158,6 +160,22 @@ public abstract class BaseController implements IController {
         messageBox.setHeaderText(header);
         messageBox.setContentText(message);
         messageBox.showAndWait();
+    }
+
+    /**
+     * Ask for confirmation.
+     *
+     * @param header	header text
+     * @param message	message text
+     *
+     * @return TRUE if confirmed, else FALSE
+     */
+    public static boolean confirmationBox(String header, String message) {
+        Alert messageBox = new Alert(AlertType.CONFIRMATION);
+        messageBox.setHeaderText(header);
+        messageBox.setContentText(message);
+        messageBox.showAndWait();
+        return (messageBox.getResult() == ButtonType.YES);
     }
 
 }
