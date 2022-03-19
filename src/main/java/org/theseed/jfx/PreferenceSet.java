@@ -56,6 +56,17 @@ public class PreferenceSet {
      */
     public void setLocationAndSize(Stage window, double top, double left, double width, double height) {
         this.setLocation(window, top, left);
+        this.setSize(window, width, height);
+    }
+
+    /**
+     * Set the size of a window.
+     *
+     * @param window		stage object for the window
+     * @param width			default width
+     * @param height		default height
+     */
+    public void setSize(Stage window, double width, double height) {
         double w = this.prefs.getDouble(this.name + "_w", width);
         double h = this.prefs.getDouble(this.name + "_h", height);
         window.setWidth(w);
@@ -78,9 +89,17 @@ public class PreferenceSet {
      */
     public void saveLocationandSize(Stage window) {
         this.saveLocation(window);
-        this.prefs.putDouble(this.name + "_w", window.getWidth());
-        this.prefs.putDouble(this.name + "_h", window.getHeight());
+        this.saveSize(window);
     }
+
+    /** Save the size of a window.
+    *
+    * @param window		stage object for the window
+    */
+   public void saveSize(Stage window) {
+       this.prefs.putDouble(this.name + "_w", window.getWidth());
+       this.prefs.putDouble(this.name + "_h", window.getHeight());
+   }
 
     /**
      * @return the value of a string preference

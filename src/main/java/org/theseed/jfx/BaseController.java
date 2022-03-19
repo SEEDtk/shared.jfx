@@ -80,6 +80,16 @@ public abstract class BaseController implements IController {
     }
 
     /**
+     * Set the size of a window.
+     *
+     * @param width			default width
+     * @param height		default height
+     */
+    protected void setSize(double width, double height) {
+        this.prefs.setSize(this.stage, width, height);
+    }
+
+    /**
      * Save the location of the window.
      */
     protected void saveLocation() {
@@ -91,6 +101,13 @@ public abstract class BaseController implements IController {
      */
     protected void saveLocationAndSize() {
         this.prefs.saveLocationandSize(this.stage);
+    }
+
+    /**
+     * Save the size of the window.
+     */
+    protected void saveSize() {
+        this.prefs.saveSize(this.stage);
     }
 
     /**
