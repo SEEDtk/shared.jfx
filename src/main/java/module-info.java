@@ -5,6 +5,7 @@ module org.theseed.shared.jfx {
 	requires slf4j.api;
 	requires shared;
 	requires commons.math3;
+	requires basic;
 
     opens org.theseed.shared.jfx to javafx.fxml;
     exports org.theseed.shared.jfx;

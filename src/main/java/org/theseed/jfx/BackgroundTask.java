@@ -5,7 +5,7 @@ package org.theseed.jfx;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.theseed.utils.ICommand;
+import org.theseed.basic.ICommand;
 
 import javafx.concurrent.Task;
 
